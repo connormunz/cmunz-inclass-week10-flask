@@ -1,0 +1,8 @@
+body{background-color: azure}
+
+#container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+}

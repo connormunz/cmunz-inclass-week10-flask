@@ -1,10 +1,7 @@
-# module 11 - Flask Application
-# connor munz
-# 03/31/26
+from flask import Flask, render_template
 
-from flask import Flask
-
-app = Flask(__name__)
+# CRITICAL: Point Flask to the custom template location
+app = Flask(__name__, template_folder="templates")
 
 
 @app.route("/")
@@ -19,6 +16,12 @@ def connor():
     z = x + y
     name = "connor"
     return f"Hello {name}, the sum of {x} and {y} is {z}"
+
+
+@app.route("/about")
+def about():
+    # Now this will search inside static/templates/ automatically
+    return render_template("about.html")
 
 
 if __name__ == "__main__":

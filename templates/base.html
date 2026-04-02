@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <title>{% block title %}Software Design{% endblock %}</title>
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='static/css/stylesheet.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <nav>
+                    <a href="{{ url_for('hello') }}">Home</a> | 
+                    <a href="{{ url_for('connor') }}">Connor</a> | 
+                    <a href="{{ url_for('about') }}">About</a>
+                </nav>
+                <hr>
+                <h1>Welcome to Software Design</h1>
+            </header>
+
+            <main>
+                {% block body %}
+                {% endblock %}
+            </main>
+
+            <footer>
+                <p>&copy; 2026 Connor Munz</p>
+            </footer>
+        </div>
+    </body>
+</html>
